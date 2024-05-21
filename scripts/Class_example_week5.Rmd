@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Here, I am downloading the sample data frame into the R Markdown.
 
 ```{r sample}
-df <- read.csv("data/sample_data.csv")
+df <- read.csv("~/lsci253/data/sample_data.csv")
 ```
 
 ## Simple Analysis
