@@ -1,0 +1,45 @@
+---
+title: "Class_example_week_5"
+author: "Guadalupe Aileen Mendoza"
+date: "2024-05-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Download Data
+
+Here, I am downloading the sample data frame into the R Markdown.
+
+```{r sample}
+df <- read.csv("data/sample_data.csv")
+```
+
+## Simple Analysis
+
+In this portion, I am conducting simple analyses of the data, namely mean and stadnard deviation.
+
+```{r analysis, echo=FALSE}
+
+summary(df$MeanF0)
+
+sd(df$MeanF0, na.rm=TRUE)
+
+```
+## Data Visualization
+
+In this portion, I am creating a simple visualization of the data.
+
+The figure shows the distribution of fundamental frequency by gender. 
+
+The trend shows that on average, women tend to produce speech at a higher fundamental frequency (F0) than men.
+
+```{r visualization, echo=FALSE}
+library(ggplot2)
+ggplot() +
+  geom_boxplot(mapping = aes(x = Gender, y = MeanF0, fill=Gender), data = df) +
+  labs(title ="MeanF0 by Gender")
+
+```
